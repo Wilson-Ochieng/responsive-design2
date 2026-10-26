@@ -1,0 +1,16 @@
+SKU,Name,Category,Quantity,Price (KES)
+EL-001,USB-C Cable 1m,Electronics,120,450
+EL-002,Wireless Mouse,Electronics,45,1200
+EL-003,Bluetooth Speaker,Electronics,8,3800
+EL-004,Phone Charger 20W,Electronics,60,1500
+EL-005,Power Bank 10000mAh,Electronics,14,2900
+ST-001,A4 Printing Paper (ream),Stationery,200,650
+ST-002,Ballpoint Pens (box of 50),Stationery,75,500
+ST-003,Stapler,Stationery,30,350
+ST-004,Notebook A5,Stationery,6,120
+FU-001,Office Chair,Furniture,12,9500
+FU-002,Standing Desk,Furniture,5,24000
+FU-003,Filing Cabinet,Furniture,9,11500
+TL-001,Cordless Drill,Tools,18,7800
+TL-002,Screwdriver Set,Tools,40,1800
+TL-003,Tape Measure 5m,Tools,3,400

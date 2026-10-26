@@ -1,13 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Responsive Design</title>
-  </head>
-  <body>
-    <main>
-      <h1>Responsive Design</h1>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    SESSION 1: build the semantic structure of the dashboard here.
+    Structure only. Do not add any styling yet.
+
+    Areas to build (see README.md for details):
+      1. Top bar        logo, search box, welcome text
+      2. Sidebar        navigation with six links
+      3. Summary cards  total products, low stock, orders today, inventory value
+      4. Inventory      a table with at least 8 products from products.txt
+      5. Add product    a form with name, SKU, category, quantity, price, notes
+      6. Footer
+
+    Remember the routine: predict, prompt, verify, review, explain, declare.
+  -->
+
+  <div class="page-shell">
+    <header class="topbar" aria-label="Top bar">
+      <div class="brand" aria-label="Inventory dashboard logo and name">
+        <img src="images/logo.svg" alt="Inventory dashboard logo" width="40" height="40">
+        <div>
+          <span class="brand-name">Inventory</span>
+        </div>
+      </div>
+
+      <label class="search" aria-label="Search inventory">
+        <span class="sr-only">Search</span>
+        <input type="search" name="search" placeholder="Search products, suppliers...">
+      </label>
+
+      <div class="user-menu" aria-label="Welcome message and user menu">
+        <p>Welcome back, <strong>Victor</strong></p>
+        <button type="button" aria-label="Open account menu">Menu</button>
+      </div>
+    </header>
+
+    <div class="dashboard-layout">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <nav>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Suppliers</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <section class="summary" aria-label="Inventory summary cards">
+          <article class="summary-card">
+            <h2>Total Products</h2>
+            <p>245</p>
+            <span>+12 this month</span>
+          </article>
+
+          <article class="summary-card">
+            <h2>Low Stock</h2>
+            <p>18</p>
+            <span>Needs attention</span>
+          </article>
+
+          <article class="summary-card">
+            <h2>Orders Today</h2>
+            <p>32</p>
+            <span>7 pending</span>
+          </article>
+
+          <article class="summary-card">
+            <h2>Inventory Value</h2>
+            <p>KES 1,245,000</p>
+            <span>Across all categories</span>
+          </article>
+        </section>
+
+        <section class="stock-panel" aria-label="Stock overview">
+          <h2>Stock overview</h2>
+          <div>
+            <div>
+              <label>Electronics</label>
+              <meter min="0" max="100" value="72">72%</meter>
+            </div>
+            <div>
+              <label>Stationery</label>
+              <meter min="0" max="100" value="58">58%</meter>
+            </div>
+            <div>
+              <label>Furniture</label>
+              <meter min="0" max="100" value="34">34%</meter>
+            </div>
+            <div>
+              <label>Tools</label>
+              <meter min="0" max="100" value="46">46%</meter>
+            </div>
+          </div>
+        </section>
+
+        <section class="inventory" aria-labelledby="inventory-heading">
+          <div class="section-header">
+            <h2 id="inventory-heading">Inventory</h2>
+            <button type="button">Export</button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EL-001</td>
+                <td>USB-C Cable 1m</td>
+                <td>Electronics</td>
+                <td>120</td>
+                <td>In stock</td>
+                <td>KES 450</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>EL-002</td>
+                <td>Wireless Mouse</td>
+                <td>Electronics</td>
+                <td>45</td>
+                <td>In stock</td>
+                <td>KES 1200</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>EL-003</td>
+                <td>Bluetooth Speaker</td>
+                <td>Electronics</td>
+                <td>8</td>
+                <td>Low stock</td>
+                <td>KES 3800</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>ST-001</td>
+                <td>A4 Printing Paper (ream)</td>
+                <td>Stationery</td>
+                <td>200</td>
+                <td>In stock</td>
+                <td>KES 650</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>ST-004</td>
+                <td>Notebook A5</td>
+                <td>Stationery</td>
+                <td>6</td>
+                <td>Low stock</td>
+                <td>KES 120</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>FU-001</td>
+                <td>Office Chair</td>
+                <td>Furniture</td>
+                <td>12</td>
+                <td>Low stock</td>
+                <td>KES 9500</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>FU-002</td>
+                <td>Standing Desk</td>
+                <td>Furniture</td>
+                <td>5</td>
+                <td>Low stock</td>
+                <td>KES 24000</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>TL-001</td>
+                <td>Cordless Drill</td>
+                <td>Tools</td>
+                <td>18</td>
+                <td>Low stock</td>
+                <td>KES 7800</td>
+                <td><button type="button">View</button></td>
+              </tr>
+              <tr>
+                <td>TL-003</td>
+                <td>Tape Measure 5m</td>
+                <td>Tools</td>
+                <td>3</td>
+                <td>Low stock</td>
+                <td>KES 400</td>
+                <td><button type="button">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="add-product" aria-labelledby="add-product-heading">
+          <h2 id="add-product-heading">Add product</h2>
+          <form>
+            <div class="form-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Product name">
+              </label>
+              <label>
+                SKU
+                <input type="text" name="sku" placeholder="SKU code">
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Category
+                <select name="category">
+                  <option value="">Select category</option>
+                  <option>Electronics</option>
+                  <option>Stationery</option>
+                  <option>Furniture</option>
+                  <option>Tools</option>
+                </select>
+              </label>
+              <label>
+                Quantity
+                <input type="number" name="quantity" min="0" placeholder="0">
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Price
+                <input type="number" name="price" min="0" step="0.01" placeholder="0.00">
+              </label>
+              <label>
+                Notes
+                <textarea name="notes" rows="3" placeholder="Additional notes"></textarea>
+              </label>
+            </div>
+
+            <button type="submit">Save product</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <p>© 2026 Inventory Dashboard</p>
+    </footer>
+  </div>
+
+</body>
 </html>
